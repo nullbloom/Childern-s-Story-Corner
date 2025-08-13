@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fun Activities - Children's Story Corner</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: 'Comic Sans MS', cursive;
+      background-color: #f0e6f6;
+      margin: 0;
+      padding: 20px;
+      color: #4a2c75;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    header {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: bold;
+      color: #5a3e85;
+      margin-bottom: 30px;
+    }
+    ul.activities-list {
+      list-style-type: none;
+      padding: 0;
+      max-width: 600px;
+      margin: 0 auto 40px auto;
+    }
+    ul.activities-list li {
+      background: white;
+      margin-bottom: 20px;
+      padding: 20px 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      font-size: 1.2rem;
+      cursor: default;
+      transition: background-color 0.3s ease;
+    }
+    ul.activities-list li:hover {
+      background-color: #d3c4f1;
+    }
+    nav {
+      margin: 50px 0;
+      text-align: center;
+    }
+    nav a {
+      text-decoration: none;
+      color: #a28fd0;
+      font-weight: bold;
+      font-size: 1.1rem;
+      border: 2px solid #a28fd0;
+      padding: 8px 16px;
+      border-radius: 12px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    nav a:hover {
+      background-color: #a28fd0;
+      color: white;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #a28fd0;
+      color: white;
+      font-size: 1rem;
+      box-shadow: 0 -4px 8px rgba(0,0,0,0.2);
+      margin-top: 60px;
+      border-radius: 0 0 15px 15px;
+    }
+
+    /* Accordion Quiz Styles */
+    .accordion {
+      border-radius: 15px;
+      background: white;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      margin-bottom: 20px;
+      overflow: hidden;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    input[type="checkbox"] {
+      display: none;
+    }
+    label {
+      display: block;
+      padding: 18px 25px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      background-color: #d3c4f1;
+      border-bottom: 2px solid #bca4e9;
+      user-select: none;
+      transition: background-color 0.3s;
+      border-radius: 15px 15px 0 0;
+    }
+    label:hover {
+      background-color: #bca4e9;
+    }
+    .answer {
+      max-height: 0;
+      padding: 0 25px;
+      color: #4a2c75;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+      border-radius: 0 0 15px 15px;
+      background-color: #f7f1ff;
+    }
+    input[type="checkbox"]:checked + label + .answer {
+      max-height: 150px;
+      padding: 15px 25px;
+    }
+
+    
+    /* Flashcard Styles */
+    .flashcards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 50px;
+      margin-top: 40px;
+    }
+
+    .card {
+      background-color: transparent;
+      width: 160px;
+      height: 160px;
+      perspective: 800px;
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 16px;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.4s ease;
+      text-align: center;
+    }
+
+    .card-front {
+      background-color: #fbe6ff;
+      color: #5a3e85;
+    }
+
+    .card-back {
+      background-color: #a28fd0;
+      color: white;
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body>
+
+<header>Fun Activities</header>
+
+<ul class="activities-list">
+  <li>🎨 Coloring pages: Print and color your favorite characters!</li>
+  <li>✂️ Simple crafts: Make paper animals and decorations.</li>
+  <li>🧩 Puzzles and riddles: Exercise your brain with fun games.</li>
+  <li>📚 Drawing challenges: Create your own storybook illustrations.</li>
+  <li>🎵 Sing-along: Learn songs and dance to the rhythm.</li>
+</ul>
+
+<!-- Interactive Accordion Quiz -->
+<div class="accordion">
+  <input type="checkbox" id="q1" />
+  <label for="q1">Which animal is known as "man's best friend"?</label>
+  <div class="answer">🐶 Dog is known as man's best friend!</div>
+</div>
+
+<div class="accordion">
+  <input type="checkbox" id="q2" />
+  <label for="q2">What color is the sky on a clear day?</label>
+  <div class="answer">The sky is blue on a clear day.</div>
+</div>
+
+<div class="accordion">
+  <input type="checkbox" id="q3" />
+  <label for="q3">How many legs does a spider have?</label>
+  <div class="answer">A spider has 8 legs.</div>
+</div>
+
+
+  <h2 style="text-align:center; color:#5a3e85;">🧚 Guess the Fairy Tale Character!</h2>
+
+  <div class="flashcards">
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">👠 Lost a shoe at midnight?</div>
+        <div class="card-back">Cinderella!</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">🐉 Sleeps in a tower...</div>
+        <div class="card-back">Sleeping Beauty!</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">🌹 Fell in love with a beast</div>
+        <div class="card-back">Belle!</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-inner">
+        <div class="card-front">🐺 Visited Grandma in the woods</div>
+        <div class="card-back">Little Red Riding Hood!</div>
+      </div>
+    </div>
+  </div>
+<nav>
+  <a href="index.html">← Back to Home</a>
+</nav>
+
+<footer>© 2025 Children's Story Corner | Imagination Awaits ✨</footer>
+
+</body>
+</html>
